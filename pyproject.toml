@@ -1,0 +1,26 @@
+[project]
+name = "md5-tui"
+version = "0.1.0"
+description = "Terminal UI application for generating MD5 hashes from text and files"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "textual>=3.0.0,<4.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0,<9.0.0",
+    "pytest-asyncio>=1.0.0,<2.0.0",
+]
+
+[project.scripts]
+md5-tui = "md5_tui.app:run"
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
